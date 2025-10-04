@@ -42,6 +42,7 @@ def stats():
     signature = verify_signature(request.data, DEPLOY_SECRET, request.headers.get("X-Hub-Signature-256"))
     if signature != True: return signature
     print("It's GitHub!")
-    Popen([r"C:\Users\rfont\HOMELAB\deploy.bat"])
+    Popen([r"C:\Users\rfont\HOMELAB\deploy.bat"],
+    creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP)
     return "Deploy sequence initiated."
 

@@ -37,7 +37,7 @@ def stats():
     nsent=net_sent, nrecv=net_recv)
 
 @app.route('/stats/json')
-def stats():
+def statsjson():
     cpu_percent = psutil.cpu_percent(interval=1)
 
     ram = psutil.virtual_memory()
