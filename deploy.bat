@@ -9,7 +9,7 @@ timeout /t 3 > nul
 
 REM stop service
 echo Stopping HomeServer... >> %LOGFILE%
-nssm stop HomeServer
+C:\Users\rfont\AppData\Local\Microsoft\WinGet\Links\nssm.exe stop HomeServer >> %LOGFILE% 2>&1
 if %ERRORLEVEL% neq 0 (
     echo Failed to stop HomeServer >> %LOGFILE%
     exit /b 1
@@ -33,7 +33,7 @@ if %ERRORLEVEL% neq 0 (
 
 REM start service
 echo Starting HomeServer... >> %LOGFILE%
-nssm start HomeServer
+C:\Users\rfont\AppData\Local\Microsoft\WinGet\Links\nssm.exe start HomeServer
 if %ERRORLEVEL% neq 0 (
     echo Failed to start HomeServer >> %LOGFILE%
     exit /b 1
