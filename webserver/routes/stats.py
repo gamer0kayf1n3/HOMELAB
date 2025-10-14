@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template_string
+from flask import Blueprint, render_template_string, jsonify
 import psutil
 
 app = Blueprint('stats', __name__)
