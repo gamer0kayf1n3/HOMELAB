@@ -1,0 +1,26 @@
+<h2>System Stats</h2>
+<ul>
+    <li>CPU Usage: <span id="cpu">{{ cpu }}</span>%</li>
+    <li>RAM Usage: <span id="ram">{{ used|round(2) }}</span> GB / <span id="ramtotal">{{ total|round(2) }}</span> GB (<span id="ramp">{{ percent }}</span>%)</li>
+    <li>Disk Usage: <span id="dused">{{ dused|round(2) }}</span> GB / <span id="dtotal">{{ dtotal|round(2) }}</span> GB (<span id="dperc">{{ dpercent }}</span>%)</li>
+    <li>Network Sent: <span id="nsent">{{ nsent|round(2) }}</span> MB</li>
+    <li>Network Received: <span id="nrecv">{{ nrecv|round(2) }}</span> MB</li>
+</ul>
+<script>
+    setInterval(() => {
+        fetch('/stats/json', { 
+            method: 'GET'
+          })
+          .then(function(response) { return response.json(); })
+          .then(function(json) {
+            document.getElementById("cpu").innerText = json["cpu"];
+            document.getElementById("ram").innerText = json["ram"];
+            document.getElementById("ramtotal").innerText = json["ramtotal"];
+            document.getElementById("dused").innerText = json["dused"];
+            document.getElementById("dtotal").innerText = json["dtotal"];
+            document.getElementById("dperc").innerText = json["dperc"];
+            document.getElementById("nsent").innerText = json["nsent"];
+            document.getElementById("nrecv").innerText = json["nrecv"];
+          });
+    }, 1000);
+</script>
