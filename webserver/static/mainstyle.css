@@ -15,11 +15,20 @@
 
 body {
     font-family: 'Lexend Deca', sans-serif;
-    margin: 20px;
+    margin: 0px;
     background-color: #f4f4f4;
+
+}
+#content-www {
+    min-height: 80vh;
 }
 
 h1 {
     font-family: 'BBH Sans Hegarty', sans-serif;
     color: #333;
+}
+
+#content-www {
+    padding: 20px;
+    margin: auto;
 }
