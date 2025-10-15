@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&family=Lexend+Deca:wght@100..900&display=swap');
 .bbh-sans-hegarty-regular {
   font-family: "BBH Sans Hegarty", sans-serif;
   font-weight: 400;
@@ -10,4 +11,15 @@
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    font-family: 'BBH Sans Hegarty', sans-serif;
+    color: #333;
 }
